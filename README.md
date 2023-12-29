@@ -21,9 +21,9 @@ here, javac(java Compiler compile the code into .class files and these are calle
 
 <mark>javac compile kore and java run kore...</mark>
 
-<mark>File er nam ar class er nam same must...Jodi onek class thake taile dekhte hobe kon class e main function e thakbe seta onujai nam hobe...Class er first later boro hater and camel case.
-function e pascal case...</mark>
-
+<mark>**File er nam ar class er nam same must...Jodi onek class thake taile dekhte hobe kon class e main function e thakbe seta onujai nam hobe...Class er first later boro hater and camel case.
+function e pascal case..**.</mark>
+</b>
 ```java
 class Example {
 
@@ -35,7 +35,7 @@ class Example {
 }
 ```
 
-<mark>Onno Function er Static Function call korte chaile oi class er nam.functionName() likha lagbe...</mark>
+<mark>**Onno Function er Static Function call korte chaile oi class er nam.functionName() likha lagbe...**</mark>
 ```java
 class Example {
 
@@ -68,7 +68,7 @@ class Area{
 }
 ```
 
-<mark>Jesob function static na segula ke non-static/ instance member function/ object member function bole...Egula onno class e use korte hooile age oi class er object create kore then object.func() diye call kora lagbe...</mark>
+<mark>**Jesob function static na segula ke non-static/ instance member function/ object member function bole...Egula onno class e use korte hooile age oi class er object create kore then object.func() diye call kora lagbe..**.</mark>
 
 ```java
 public class Object1 {
@@ -94,5 +94,122 @@ class Obj2{
 
 
 <mark>Java te uninitialized var e 0 thake...</mark>
+
+<mark>We can also access static members using object.static_memberVar</mark>
+
+#### <mark> _We can't call the static function by using the object. It is invoked by using the class name. But we can call the static member variable by object, but we don't need any object reference because static variables belong to a class._</mark>
+
+```java
+public class StaticMemberByObj {
+    public static void main(String[] args) {
+        //Access by class:
+        System.out.println(Example.x);
+        System.out.println(Example.b);
+        Example.x = 43;
+        System.out.println(Example.x);
+        Example.showData();
+        //Access by Obj :
+        Example e1 = new Example();
+//We can call the static member variable using object but not recommended...
+        e1.x = 122;
+        System.out.println(e1.x);
+//We can't call the static function using the object...
+        //e.showData();
+        System.out.println(Example.x);
+    }
+}
+class Example{
+    private static int a;
+    public static  int b = 5;
+    static int x;
+    public static void showData() {
+        System.out.println(b +" "+x);
+    }
+}
+```
+
+<mark>**We can access private member variables using _getters and setters_**</mark>
+
+```java
+public class AccessingPrivateVar {
+    public static void main(String[] args) {
+        Demo d = new Demo();
+        d.setter(54);
+        d.getter();
+    }
+}
+class Demo{
+    private static int x;
+    void setter(int x){
+        Demo.x = x;
+    }
+    void getter(){
+        System.out.println(x);
+    }
+}
+```
+
+### <mark>How Can we access private member variable Without creating objects?</mark>
+<mark>We can achieve it by making getter and setter static...Then we can call them...</mark>
+
+```java
+public class AccessingPrivateVarWithoutObj {
+    public static void main(String[] args) {
+        Demo1.setter(123);
+        Demo1.getter();
+    }
+}
+class Demo1{
+    private static int x;
+    static void setter(int x){
+        Demo1.x = x;
+    }
+   static void getter(){
+        System.out.println(x);
+    }
+}
+```
+
+<mark>**Kono modifier na dile seta default access modifier...**</mark>
+
+<mark>**Prottek Object er jonne alada alada vabe value assign hoi :** </mark>
+
+```java
+public class AccessingPrivateInstanceVar {
+    public static void main(String[] args) {
+        PrivateInstanceClass p1 = new PrivateInstanceClass();
+        p1.fun1();
+        p1.fun2();//5
+        PrivateInstanceClass p2 = new PrivateInstanceClass();
+        p2.fun2();//0
+    }
+}
+class PrivateInstanceClass{
+    private int x;
+    void fun1(){
+        x = 5;
+    }
+    void fun2(){
+        System.out.println(x);
+    }
+}
+```
+
+<mark>**Ekta Java program e only ektai public class thakbe...Tai jetai main function thakbe seta kei public korbo, noile kawkei public korbo nah...**</mark>
+
+
+<mark>**_Java te kono outer class private/protected hoi nah...Java te class er vitore class thakle vitorer ta innner class ebong eta privae/protected hoite pare. .._**</mark>
+
+
+<mark>**main function static, internally Java compiler call the main function using classname.main()...**</mark>
+
+
+
+
+
+
+
+
+
 
 

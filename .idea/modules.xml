@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Day_01/Day_01.iml" filepath="$PROJECT_DIR$/Day_01/Day_01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day_02/Day_02.iml" filepath="$PROJECT_DIR$/Day_02/Day_02.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java Full Specialization.iml" filepath="$PROJECT_DIR$/Java Full Specialization.iml" />
     </modules>
   </component>
