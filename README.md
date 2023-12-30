@@ -204,6 +204,123 @@ class PrivateInstanceClass{
 <mark>**main function static, internally Java compiler call the main function using classname.main()...**</mark>
 
 
+> ### Wrapper Class :
+Java is almost 100% Object-Oriented Language. Here, has primitive datatype and in this we can create programs without using objects. To make Java a 100% pure object-oriented programming language java introduced **"Wrapper class"** 
+
+
+for 
+* int -> Integer
+* float -> Float
+* char -> Character
+* boolean -> Boolean
+etc...
+
+There is a static variable in **Integer** class, _parseInt()_ to convert anything to integer...it returns an int type
+```java
+int x = Integer.parseInt("123");
+```
+
+There is also static function **valueOf()** it returns an Integer type object...
+
+```java
+Integer x = Integer.valueOf("123");
+```
+
+There is a non-static function named intValue() which returns an int type value...
+
+```java
+Integer x = Integer.valueOf("123");
+int num = x.intValue();
+```
+Ei 2 ta mile parseInt() eri kaj kore...
+```java
+public class WrapperClass {
+
+    public static void main(String[] args) {
+        // Integer num = new Integer(55); // Deprecated... Instead, use autoboxing.
+        Integer num = 55;
+
+        int numS = Integer.parseInt("45");
+        System.out.println(num + numS); // Prints the sum of num and numS.
+
+        Integer numX = Integer.valueOf("123");
+        System.out.println(numX.getClass()); // Prints the class of numX (java.lang.Integer).
+
+        int x = numX.intValue(); // Unwrapping: Converts Integer to int.
+
+        System.out.println("The data type of x: " + Integer.valueOf(x).getClass().getSimpleName());//Integer...
+
+        //Value of e base o pathano jai...Etai dara convert o kora jia number system...
+        Integer bin = Integer.valueOf("1000111",2);
+        //System.out.println(bin); works
+        int binI = bin.intValue();
+        System.out.println(binI);
+    }
+}
+```
+
+Sob wrapper class ei function gula ace...
+
+> ## Command lin arguments : 
+
+```java
+public class CommandLineArguments {
+    public static void main(String[] args) {
+        for (String arg : args) {
+            System.out.println(arg);
+        }
+    }
+}
+```
+![img.png](img.png)
+
+Average program using command line : 
+```java
+    public class CommandLineArguments {
+        public static void main(String[] args) {
+            int sum = 0, avg;
+            for (String arg : args) {
+                sum = sum + Integer.parseInt(arg);
+            }
+            avg = sum/args.length;
+            System.out.println(avg);
+        }
+    }
+```
+
+![img_1.png](img_1.png)
+
+
+> ## Package :
+Package means folder in java...Similler type code ekjai rajhar jonne ar name conflict dur korar jonne...
+
+Terminl theke package create korte hoile program er moddheei likha lagbe
+```java
+package packageName;
+```
+then, in command-line:
+![img_2.png](img_2.png)
+
+to run write java package2.className
+
+class ke public na korle onno package theke setake import kora jabe nah...
+
+>## Access Specifiers :
+1. public->outside the class/program/package use korte parbe...
+2. private->member private hole sudhu inside the class use kora jabe...
+3. protected->inside the class, outside the class in same or different package but need to be subclass...
+4. default->kono kisu na likhlei default...inside the class and outside the class but in same package...
+
+
+> ## Constructor:
+
+
+
+
+
+
+
+
 
 
 
